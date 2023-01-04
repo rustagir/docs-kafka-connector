@@ -20,10 +20,6 @@ Overview
 Use the following configuration settings to specify a class the sink
 connector uses to process change data capture (CDC) events.
 
-See the guide on :doc:`Sink Connector Change Data Capture </sink-connector/fundamentals/change-data-capture>`
-for examples using the built-in ``ChangeStreamHandler`` and Debezium event
-producers.
-
 .. _sink-configuration-change-data-capture-description-end:
 
 .. include:: /includes/sink-config-link.rst
@@ -48,7 +44,20 @@ Settings
          into event streams.
        |
        | **Default**: ``""``
-       | **Accepted Values**: An empty string or a fully qualified Java
-         class name
+       | **Accepted Values**:
+       | The following handlers are built into the
+         sink connector:
+       | - ``"com.mongodb.kafka.connect.sink.cdc.debezium.mongodb.MongoDbHandler"``
+       | - ``"com.mongodb.kafka.connect.sink.cdc.mongodb.ChangeStreamHandler"``
+       | - ``"com.mongodb.kafka.connect.sink.cdc.qlik.rdbms.RdbmsHandler"``
+
+       .. tip::
+
+          To learn more about the built-in handlers, see the guide on
+          :ref:`Sink Connector Change Data Capture Handlers
+          <sink-fundamentals-cdc-handler>`.
+          
+       | You can also use an empty string or a fully qualified Java
+         class name.
 
 .. _sink-configuration-change-data-capture-table-end:
