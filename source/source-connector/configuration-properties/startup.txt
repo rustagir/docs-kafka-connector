@@ -80,7 +80,6 @@ Settings
          Change Stream parameters, see the :rapid:`Server manual entry </reference/operator/aggregation/changeStream/>`.
        | **Default**: ``""``
        | **Accepted Values**:
-
          - An integer number of seconds since the
            Epoch in decimal format (for example, ``30``)
          - An instant in the ISO-8601 format with one second precision (for example,
